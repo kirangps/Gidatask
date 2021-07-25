@@ -3,28 +3,31 @@ import Header from './components/Header'
 import Button from './components/Button'
 import Footer from './components/Footer'
 import './App.css'
-import Particles from 'react-particles-js'
+import image from './image.jpg'
+import {Route, Switch} from 'react-router-dom'
+import Popup from './components/Popup'
+import Innerdata from './components/Innerdata'
+import Duration from './components/Duration'
+import Graph from './components/Graph'
 
-const particlesEffect ={
- 
-    particles: {
-      number :{
-        value: 10,
-        density:{
-          enable:true,
-          value_area:30
-       }
-      }
-    }
- }
+
+
+
  class App extends Component {
     render(){
     return (
-      <div className="contain">
-        <Particles params={particlesEffect} className="particles"/> 
+       <div id="contain">
+       <div>
         <Header/>
-        <Button/>
-		<Footer/>
+        {/* <Button/> */}
+       <Switch>
+         <Route exact path="/" component={Button}/>
+       <Route exact path="/popup" component={Popup}/>
+        <Route  path="/Gif" component={Duration}/>
+        <Route  path="/Graph" component={Graph}/>
+       </Switch>
+       	<Footer/>
+      </div>
       </div>
     )
 }

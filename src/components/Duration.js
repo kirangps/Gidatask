@@ -1,23 +1,20 @@
 import React from 'react'
-import Graphics from "./Graphics.gif"
+import Graphics1 from "./Graphics1.gif"
 import '../App.css'
 import './Duration.css'
+import { Dialog } from '@material-ui/core'
+import tachyons from 'tachyons'
 
 const Duration=()=>{
-    // const Iteration=()=>{
-    //     return(
-    //        //alert('Hi')
-    //        <h1>Hello!!</h1>
-    //     )
-    // }
+    
     setInterval(()=>{
         let gif=document.getElementById('anim_gif')
             gif.className="disappear";
-    },15000)
+    },15000) 
     return(
-        
-        <img src={Graphics} id="anim_gif" style={{height:"400px",width:"400px"}}></img>
-     
+       <div className="tc bg-light-green grow shadow-5">
+        <img src={Graphics1} id="anim_gif" style={{height:"400px",width:"400px"}}></img>
+      </div>
     )
 }
 export default Duration
